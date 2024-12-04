@@ -1,29 +1,18 @@
 .results-carousel {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: 100%;
-  gap: 10px; /* 添加项目间的间距 */
+  display: flex !important;
+  width: 100% !important;
+  overflow-x: auto !important;
 }
 
 .results-carousel .item {
-  flex: 0 0 calc(20% - 10px); /* 每个项目占据约20%宽度 */
-  width: calc(20% - 10px);
-  height: auto;
+  flex: 0 0 25% !important;
+  width: 25% !important;
+  padding: 5px !important;
+  box-sizing: border-box !important;
 }
 
 .results-carousel .item video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 保持视频比例 */
-}
-
-/* 可选：隐藏滚动条，但保留滚动功能 */
-.results-carousel {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.results-carousel::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
 }
