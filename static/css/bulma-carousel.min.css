@@ -1,86 +1,23 @@
-/* Adjust carousel to show 5 items */
-.slider-container {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  overflow: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  min-height: 100%;
-}
-
-.slider-container .slider-item {
-  flex: 0 0 20%; /* Each item takes 20% of the container */
-  padding: 0 5px;
-}
-
-.slider-container .slider-item .video-container {
-  width: 100%;
-  height: 100%;
-}
-
-.slider-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  text-align: center;
-}
-
-.slider-pagination .slider-page {
-  background: #fff;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 3px;
-  cursor: pointer;
-  transition: transform .3s;
-}
-
-.slider-pagination .slider-page.is-active,
-.slider-pagination .slider-page:hover {
-  transform: scale(1.4);
-}
-
-.slider-navigation-next,
-.slider-navigation-previous {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  background: #fff center center no-repeat;
-  background-size: 20px 20px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  top: 50%;
-  margin-top: -20px;
-  left: 0;
-  cursor: pointer;
-  transition: opacity .3s, transform .3s;
-}
-
-.slider-navigation-next:hover,
-.slider-navigation-previous:hover {
-  transform: scale(1.2);
-}
-
-.slider-navigation-next.is-hidden,
-.slider-navigation-previous.is-hidden {
-  display: none;
-  opacity: 0;
-}
-
-.slider {
+.hero-body .container {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+}
+
+.results-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px; /* 添加视频之间的间距 */
+}
+
+.results-carousel .item {
+  flex: 0 0 calc(25% - 10px); /* 设置每个视频占25%宽度，减去间距 */
+  max-width: calc(25% - 10px);
   height: auto;
-  max-height: 100%;
+}
+
+.results-carousel .item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持视频比例 */
 }
