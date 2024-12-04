@@ -1,38 +1,29 @@
-.slider-container {
+.results-carousel {
   display: flex;
   flex-wrap: nowrap;
-  flex-direction: row;
-  overflow-x: auto; /* 允许水平滚动 */
-  gap: 10px; /* 添加项目之间的间距 */
+  overflow-x: auto;
+  width: 100%;
+  gap: 10px; /* 添加项目间的间距 */
 }
 
-.slider-container .slider-item {
-  flex: 0 0 calc(20% - 10px); /* 每个项目占据20%宽度，减去间距 */
-  min-width: calc(20% - 10px); /* 确保最小宽度 */
-  max-width: calc(20% - 10px); /* 确保最大宽度 */
-  height: auto; /* 自动调整高度 */
+.results-carousel .item {
+  flex: 0 0 calc(20% - 10px); /* 每个项目占据约20%宽度 */
+  width: calc(20% - 10px);
+  height: auto;
 }
 
-.slider-container .slider-item video {
+.results-carousel .item video {
   width: 100%;
   height: 100%;
   object-fit: cover; /* 保持视频比例 */
 }
 
-/* 可选：添加滚动条样式 */
-.slider-container::-webkit-scrollbar {
-  height: 8px;
+/* 可选：隐藏滚动条，但保留滚动功能 */
+.results-carousel {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.slider-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.slider-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.slider-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.results-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
